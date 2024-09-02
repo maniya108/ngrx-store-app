@@ -9,6 +9,8 @@ import { routes } from './app.routes';
 import { provideState, provideStore } from '@ngrx/store';
 import { counterFeatureName, homeReducer } from './store/home/home.reducer';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { provideHttpClient } from '@angular/common/http';
+import { provideEffects } from '@ngrx/effects';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -27,5 +29,6 @@ export const appConfig: ApplicationConfig = {
         persist: true,
       },
     }),
+    provideHttpClient(),
   ],
 };

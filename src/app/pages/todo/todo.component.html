@@ -1,0 +1,14 @@
+@for(todo of todoList(); track todo.id) {
+<div>{{ todo.name }}</div>
+} @empty {
+<div>For is Empty</div>
+}
+
+<!--  -->
+@if(isLoading$ | async) {
+<div>Loading...</div>
+} @else { @for(todo of todoList$ | async; track todo.id) {
+<div>{{ todo.title }}</div>
+} @empty {
+<div>For is Empty</div>
+} }
